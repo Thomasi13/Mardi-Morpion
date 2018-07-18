@@ -65,49 +65,69 @@ class Board
 
   def play 
 
-    to_string2
     puts "Où voulez-vous jouer?"
     @entrer = gets.chomp.to_i
-    victory?
 
           case @entrer
 
               when 1
                 @@cases1.valeur = "X"
-               
+                victory?
               when 2
                 @@cases2.valeur = "X"
-               
+                victory?
               when 3
                 @@cases3.valeur = "X"
-               
+                victory?
               when 4
                 @@cases4.valeur = "X"
-               
+                victory?
               when 5
                 @@cases5.valeur = "X"
-               
+                victory?
               when 6
                 @@cases6.valeur = "X"
-               
+                victory?
               when 7
                 @@cases7.valeur = "X"
-                
+                victory?
               when 
                 @@cases8.valeur = "X"
-               
+                victory?
               when 9
                 @@cases9.valeur = "X"
-                
+                victory?
           end
 
+        to_string2
 
   end
 
   def victory? 
-      puts "hello"
-  end
+      if  @@cases1.valeur == 'O' && @@cases2.valeur == 'O' && @@cases3.valeur == 'O' || 
+          @@cases4.valeur == 'O' && @@cases5.valeur == 'O' && @@cases6.valeur == 'O' || 
+          @@cases7.valeur == 'O' && @@cases8.valeur == 'O' && @@cases9.valeur == 'O' || 
+          @@cases1.valeur == 'O' && @@cases4.valeur == 'O' && @@cases7.valeur == 'O' || 
+          @@cases2.valeur == 'O' && @@cases5.valeur == 'O' && @@cases8.valeur == 'O' || 
+          @@cases3.valeur == 'O' && @@cases6.valeur == 'O' && @@cases9.valeur == 'O' || 
+          @@cases1.valeur == 'O' && @@cases5.valeur == 'O' && @@cases9.valeur == 'O' || 
+          @@cases3.valeur == 'O' && @@cases5.valeur == 'O' && @@cases7.valeur == 'O' || 
+          @@cases1.valeur == 'X' && @@cases2.valeur == 'X' && @@cases3.valeur == 'X' || 
+          @@cases4.valeur == 'X' && @@cases5.valeur == 'X' && @@cases6.valeur == 'X' || 
+          @@cases7.valeur == 'X' && @@cases8.valeur == 'X' && @@cases9.valeur == 'X' || 
+          @@cases1.valeur == 'X' && @@cases4.valeur == 'X' && @@cases7.valeur == 'X' || 
+          @@cases2.valeur == 'X' && @@cases5.valeur == 'X' && @@cases8.valeur == 'X' || 
+          @@cases3.valeur == 'X' && @@cases6.valeur == 'X' && @@cases9.valeur == 'X' || 
+          @@cases1.valeur == 'X' && @@cases5.valeur == 'X' && @@cases9.valeur == 'X' || 
+          @@cases3.valeur == 'X' && @@cases5.valeur == 'X' && @@cases7.valeur == 'X'
 
+        puts "---------------------"
+        puts "YOU WIN"
+        puts "---------------------"
+        Game.new
+
+      end
+  end
 end
 
 

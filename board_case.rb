@@ -13,7 +13,7 @@ class BoardCase
   
   def to_string
     #TO DO : doit renvoyer la valeur au format string
-    @numc_case = @num_case.to_s
+    @num_case = @num_case.to_s
     @valeur = @valeur.to_s
   end
 
